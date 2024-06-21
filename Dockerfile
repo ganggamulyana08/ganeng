@@ -1,6 +1,5 @@
 
 FROM public.ecr.aws/amazonlinux/amazonlinux:2023 as build
-RUN apt update && apt -y install curl git wget
 RUN mkdir /sysroot
 RUN dnf --releasever=$(rpm -q system-release --qf '%{VERSION}') \
   --installroot /sysroot \
